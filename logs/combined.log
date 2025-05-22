@@ -283,3 +283,27 @@
 {"createdAt":"2025-05-12T18:20:23.639Z","level":"info","message":"User created successfully","timestamp":"2025-05-12 21:20:23","userId":28}
 {"expiresAt":"2025-05-13T18:20:23.646Z","level":"info","message":"Verification token created","timestamp":"2025-05-12 21:20:23","token":"04a90d05d6d56480bedeac265f7f33aa479c3cc33c4dad86f9e01ddf2371bd45","userId":28}
 {"level":"info","message":"Email successfully sent to saw2lh4qvv@cmhvzylmfc.com","timestamp":"2025-05-12 21:20:25"}
+{"email":"bmcm0qj9dm@mkzaso.com","level":"info","message":"Creating new user","timestamp":"2025-05-22 16:42:24"}
+{"createdAt":"2025-05-22T13:42:24.633Z","level":"info","message":"User created successfully","timestamp":"2025-05-22 16:42:24","userId":30}
+{"expiresAt":"2025-05-23T13:42:24.661Z","level":"info","message":"Verification token created","timestamp":"2025-05-22 16:42:24","token":"2c4ea88c056303489e59cd364b182c814bd03b468ff726e8c452ed68c6f28146","userId":30}
+{"level":"info","message":"Email successfully sent to bmcm0qj9dm@mkzaso.com","timestamp":"2025-05-22 16:42:26"}
+{"level":"info","message":"Upload avatar started","timestamp":"2025-05-22 16:43:21","userId":30}
+{"level":"info","message":"File received","mimetype":"image/png","originalname":"basic.png","size":18899,"timestamp":"2025-05-22 16:43:21"}
+{"avatarUrl":"/api/uploads/avatars/150d4c28685650ad43cd2d4a2a425fbd.png","level":"info","message":"Updating user avatar","timestamp":"2025-05-22 16:43:21","userId":30}
+{"avatarUrl":"/api/uploads/avatars/150d4c28685650ad43cd2d4a2a425fbd.png","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-22 16:43:21"}
+{"email":"t2xx9d0r3o@qacmjeq.com","level":"info","message":"Creating new user","timestamp":"2025-05-22 17:15:31"}
+{"createdAt":"2025-05-22T14:15:31.991Z","level":"info","message":"User created successfully","timestamp":"2025-05-22 17:15:31","userId":31}
+{"expiresAt":"2025-05-23T14:15:31.998Z","level":"info","message":"Verification token created","timestamp":"2025-05-22 17:15:32","token":"fab99b3366bc640f39cb4696b4af561175e5541a423f7fe4c0d74034441b9b00","userId":31}
+{"level":"info","message":"Email successfully sent to t2xx9d0r3o@qacmjeq.com","timestamp":"2025-05-22 17:15:33"}
+{"email":"wccpkbpki3@jkotypc.com","level":"info","message":"Creating new user","timestamp":"2025-05-22 17:16:22"}
+{"createdAt":"2025-05-22T14:16:22.814Z","level":"info","message":"User created successfully","timestamp":"2025-05-22 17:16:22","userId":32}
+{"expiresAt":"2025-05-23T14:16:22.818Z","level":"info","message":"Verification token created","timestamp":"2025-05-22 17:16:22","token":"2d282bc7df6a382242c5b8329b743609c39bdbac2a8e80cd8900f48e3e427064","userId":32}
+{"level":"info","message":"Email successfully sent to wccpkbpki3@jkotypc.com","timestamp":"2025-05-22 17:16:24"}
+{"level":"info","message":"Upload avatar started","timestamp":"2025-05-22 17:17:00","userId":32}
+{"level":"info","message":"File received","mimetype":"image/png","originalname":"basic.png","size":18899,"timestamp":"2025-05-22 17:17:00"}
+{"avatarUrl":"/api/uploads/avatars/d50772d3e2afdf4d3c3d00ffef0657d7.png","level":"info","message":"Updating user avatar","timestamp":"2025-05-22 17:17:00","userId":32}
+{"avatarUrl":"/api/uploads/avatars/d50772d3e2afdf4d3c3d00ffef0657d7.png","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-22 17:17:00"}
+{"level":"info","message":"Upload avatar started","timestamp":"2025-05-22 17:18:02","userId":32}
+{"level":"info","message":"File received","mimetype":"image/jpeg","originalname":"oxy.jpg","size":9684,"timestamp":"2025-05-22 17:18:02"}
+{"avatarUrl":"/api/uploads/avatars/0e23d7850eb9a0f2cbea9e5522624736.jpg","level":"info","message":"Updating user avatar","timestamp":"2025-05-22 17:18:02","userId":32}
+{"avatarUrl":"/api/uploads/avatars/0e23d7850eb9a0f2cbea9e5522624736.jpg","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-22 17:18:02"}

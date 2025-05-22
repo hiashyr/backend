@@ -39,8 +39,8 @@ uploadDirs.forEach(dir => {
 });
 
 // Статические файлы
-app.use('/uploads/avatars', express.static(uploadDirs[0]));
-app.use('/uploads/questions', express.static(uploadDirs[1]));
+app.use('/api/uploads/avatars', express.static(uploadDirs[0]));
+app.use('/api/uploads/questions', express.static(uploadDirs[1]));
 
 // Логирование запросов
 app.use((req, res, next) => {
