@@ -9,6 +9,7 @@ router.use(authMiddleware);
 
 // Роуты для работы с темами
 router.get('/', TopicController.getTopics);
+router.get('/:topicId', TopicController.getTopic);
 
 // Роуты для тестирования по теме
 router.post('/:topicId/start', TopicController.startTopicTest);

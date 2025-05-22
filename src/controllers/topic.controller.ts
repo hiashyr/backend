@@ -25,6 +25,41 @@ async getTopics(req: Request, res: Response): Promise<void> {
     }
 }
 
+async getTopic(req: Request, res: Response): Promise<void> {
+    try {
+        if (!req.user) {
+            res.status(401).json({ error: 'Unauthorized' });
+            return;
+        }
+
+        const { topicId } = req.params;
+        const parsedTopicId = parseInt(topicId, 10);
+
+        if (isNaN(parsedTopicId)) {
+            res.status(400).json({ error: 'Invalid topic ID' });
+            return;
+        }
+
+        const topic = await TopicService.getTopic(parsedTopicId);
+        
+        if (!topic) {
+            res.status(404).json({ error: 'Topic not found' });
+            return;
+        }
+
+        res.json({
+            success: true,
+            data: topic
+        });
+    } catch (error) {
+        console.error('Get topic error:', error);
+        res.status(500).json({ 
+            error: 'Failed to get topic',
+            details: error instanceof Error ? error.message : undefined
+        });
+    }
+}
+
     async startTopicTest(req: Request, res: Response): Promise<void> {
         try {
             if (!req.user) {

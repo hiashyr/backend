@@ -73,6 +73,10 @@ class TopicService {
     }
   }
 
+  async getTopic(topicId: number): Promise<Topic | null> {
+    return this.topicRepo.findOneBy({ id: topicId });
+  }
+
   async initTopicProgress(userId: number, topicId: number): Promise<TopicProgress> {
     await this.ensureTopicExists(topicId);
     
@@ -102,7 +106,7 @@ class TopicService {
     return this.questionRepo.find({
       where: { topicId },
       relations: ['answers'],
-      take: 20
+      order: { id: 'ASC' }
     });
   }
 
@@ -129,7 +133,7 @@ class TopicService {
     const savedAttempt = await this.attemptRepo.save(attempt);
 
     const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
-    const defaultImage = `${baseUrl}/images/default-question.jpg`;
+    const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
     console.log('Created attempt with ID:', savedAttempt.id);
     return {
@@ -137,7 +141,7 @@ class TopicService {
       questions: questions.map(q => ({
         id: q.id,
         text: q.text,
-        imageUrl: q.imageUrl ? `${baseUrl}/uploads/questions/${q.imageUrl}` : defaultImage,
+        imageUrl: q.imageUrl ? `/api/uploads/questions/${q.imageUrl}` : defaultImage,
         answers: q.answers.map(a => ({ id: a.id, text: a.text }))
       })),
       topicName: topic.name
@@ -168,11 +172,19 @@ class TopicService {
       const topic = await this.topicRepo.findOneBy({ id: topicId });
       console.log('Topic:', topic);
 
+      const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+      const defaultImage = `/api/uploads/questions/default-question.jpg`;
+
       return {
           attemptId: attempt.id,
           topicId,
           topicName: topic?.name || '',
-          questions: questions || [], // Гарантируем массив
+          questions: questions.map(q => ({
+              id: q.id,
+              text: q.text,
+              imageUrl: q.imageUrl ? `/api/uploads/questions/${q.imageUrl}` : defaultImage,
+              answers: q.answers.map(a => ({ id: a.id, text: a.text }))
+          })),
           progress: {
               answered: attempt.userAnswers?.length || 0,
               total: attempt.totalQuestions
@@ -248,11 +260,17 @@ class TopicService {
         const totalQuestions = attempt.totalQuestions;
         const passed = correctAnswers >= Math.ceil(totalQuestions * 0.7); // 70% для успешного прохождения
 
+        // Вычисляем затраченное время
+        const timeSpent = attempt.startedAt 
+            ? Math.floor((new Date().getTime() - attempt.startedAt.getTime()) / 1000)
+            : 0;
+
         // Обновляем попытку
         attempt.status = passed ? 'passed' : 'failed';
         attempt.correctAnswers = correctAnswers;
         attempt.incorrectAnswers = totalQuestions - correctAnswers;
         attempt.completedAt = new Date();
+        attempt.timeSpentSeconds = timeSpent;
         
         await attemptRepo.save(attempt);
 
@@ -261,7 +279,7 @@ class TopicService {
             { user: { id: userId }, topicId },
             { 
                 status: passed ? 'passed' : 'failed',
-                lastAttempt: attempt, // Используем само отношение, а не ID
+                lastAttempt: attempt,
                 correctAnswers: () => `correct_answers + ${correctAnswers}`,
                 questionsAnswered: () => `questions_answered + ${totalQuestions}`
             }
