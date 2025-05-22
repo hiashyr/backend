@@ -335,6 +335,23 @@ export const getAdminStats = async (req: Request, res: Response): Promise<void> 
   }
 };
 
+export const checkEmail = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { email } = req.body;
+    const user = await userRepository.findOne({ where: { email } });
+
+    res.json({ 
+      exists: !!user && user.isVerified,
+      message: user && user.isVerified ? 'Email уже используется' : 'Email доступен'
+    });
+  } catch (error) {
+    logger.error("Check email error:", error);
+    res.status(500).json({ 
+      error: "SERVER_ERROR",
+      message: "Ошибка при проверке email" 
+    });
+  }
+};
 
 function generateToken(user: User): string {
   if (!process.env.JWT_SECRET) {
