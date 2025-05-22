@@ -90,8 +90,7 @@ export const requestPasswordChange = async (req: Request, res: Response) => {
     });
 
     // 5. Отправляем письмо
-    const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${token}&type=change`;
-    await sendPasswordResetEmail(user.email, resetLink, 'change');
+    await sendPasswordResetEmail(user.email, token, 'change');
 
     return res.json({ success: true });
   } catch (error: unknown) { // Явно указываем тип unknown

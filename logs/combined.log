@@ -307,3 +307,10 @@
 {"level":"info","message":"File received","mimetype":"image/jpeg","originalname":"oxy.jpg","size":9684,"timestamp":"2025-05-22 17:18:02"}
 {"avatarUrl":"/api/uploads/avatars/0e23d7850eb9a0f2cbea9e5522624736.jpg","level":"info","message":"Updating user avatar","timestamp":"2025-05-22 17:18:02","userId":32}
 {"avatarUrl":"/api/uploads/avatars/0e23d7850eb9a0f2cbea9e5522624736.jpg","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-22 17:18:02"}
+{"level":"info","message":"Email successfully sent to shlimakovv@mail.ru","timestamp":"2025-05-22 19:30:57"}
+{"level":"info","message":"Upload avatar started","timestamp":"2025-05-22 19:53:24","userId":1}
+{"level":"info","message":"File received","mimetype":"image/jpeg","originalname":"oxy.jpg","size":9684,"timestamp":"2025-05-22 19:53:24"}
+{"avatarUrl":"/api/uploads/avatars/4fc720a29891b10febc788f8913650a9.jpg","level":"info","message":"Updating user avatar","timestamp":"2025-05-22 19:53:24","userId":1}
+{"avatarUrl":"/api/uploads/avatars/4fc720a29891b10febc788f8913650a9.jpg","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-22 19:53:24"}
+{"level":"info","message":"Email successfully sent to shlimakovv@mail.ru","timestamp":"2025-05-22 19:53:34"}
+{"level":"info","message":"Email successfully sent to shlimakovv@mail.ru","timestamp":"2025-05-22 20:04:24"}
