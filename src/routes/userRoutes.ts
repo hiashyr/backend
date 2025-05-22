@@ -6,7 +6,8 @@ import {
   getUsers,
   getAdminStats,
   uploadAvatar as uploadAvatarHandler, // Переименовываем импорт
-  changePassword
+  changePassword,
+  checkEmail
 } from '../controllers/userController';
 import authMiddleware from '../middlewares/authMiddleware';
 import { uploadAvatar } from '../config/multer'; // Middleware для загрузки
@@ -25,6 +26,7 @@ const asyncHandler = <T extends Request>(
 };
 
 // Public routes
+router.post("/check-email", asyncHandler<Request>(checkEmail));
 router.post("/register", asyncHandler<Request>(register));
 router.post("/login", asyncHandler<Request>(login));
 
