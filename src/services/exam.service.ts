@@ -164,13 +164,13 @@ class ExamService {
 
           // 5. Форматируем вопросы
           const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
-          const defaultImage = `${baseUrl}/uploads/questions/default-question.jpg`;
+          const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
           const formattedQuestions = shuffledQuestions.map(question => ({
             id: question.id,
             text: question.text,
             imageUrl: question.imageUrl 
-              ? `${baseUrl}/uploads/questions/${question.imageUrl}`
+              ? `/api/uploads/questions/${question.imageUrl}`
               : defaultImage,
             topicId: question.topicId,
             isHard: question.isHard,
