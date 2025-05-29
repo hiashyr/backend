@@ -354,3 +354,16 @@
 {"level":"info","message":"File received","mimetype":"image/jpeg","originalname":"oxy.jpg","size":9684,"timestamp":"2025-05-22 23:31:49"}
 {"avatarUrl":"/api/uploads/avatars/86e9398d29dba32ef69d3fdd90f53ad7.jpg","level":"info","message":"Updating user avatar","timestamp":"2025-05-22 23:31:49","userId":40}
 {"avatarUrl":"/api/uploads/avatars/86e9398d29dba32ef69d3fdd90f53ad7.jpg","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-22 23:31:49"}
+{"level":"info","message":"Upload avatar started","timestamp":"2025-05-29 16:55:59","userId":1}
+{"level":"info","message":"File received","mimetype":"image/png","originalname":"basic.png","size":18899,"timestamp":"2025-05-29 16:55:59"}
+{"avatarUrl":"/api/uploads/avatars/39d75a1cc0739b701b2578c3938167d7.png","level":"info","message":"Updating user avatar","timestamp":"2025-05-29 16:55:59","userId":1}
+{"avatarUrl":"/api/uploads/avatars/39d75a1cc0739b701b2578c3938167d7.png","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-29 16:55:59"}
+{"level":"info","message":"Email successfully sent to shlimakovv@mail.ru","timestamp":"2025-05-29 16:56:13"}
+{"level":"info","message":"Upload avatar started","timestamp":"2025-05-29 16:57:39","userId":1}
+{"level":"info","message":"File received","mimetype":"image/jpeg","originalname":"oxy.jpg","size":9684,"timestamp":"2025-05-29 16:57:39"}
+{"avatarUrl":"/api/uploads/avatars/8b1add65e1a55575f2552f4663ab66e8.jpg","level":"info","message":"Updating user avatar","timestamp":"2025-05-29 16:57:39","userId":1}
+{"avatarUrl":"/api/uploads/avatars/8b1add65e1a55575f2552f4663ab66e8.jpg","level":"info","message":"Avatar updated successfully","timestamp":"2025-05-29 16:57:39"}
+{"email":"6wy282g4xi@cmhvzylmfc.com","level":"info","message":"Creating new user","timestamp":"2025-05-29 16:58:11"}
+{"createdAt":"2025-05-29T13:58:11.614Z","level":"info","message":"User created successfully","timestamp":"2025-05-29 16:58:11","userId":41}
+{"expiresAt":"2025-05-30T13:58:11.622Z","level":"info","message":"Verification token created","timestamp":"2025-05-29 16:58:11","token":"7943bb752c7e877d72572364c2ccec3e578da2b8fd6582833cdecb638f3c6893","userId":41}
+{"level":"info","message":"Email successfully sent to 6wy282g4xi@cmhvzylmfc.com","timestamp":"2025-05-29 16:58:13"}

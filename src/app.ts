@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes";
 import examRoutes from './routes/exam.routes';
 import questionRoutes from './routes/question.routes'; // Добавляем новый роут
 import topicRoutes from './routes/topic.routes'; // Добавляем этот импорт
+import hardModeRoutes from './routes/hard-mode.routes';
 import path from "path";
 import fs from "fs"; // Для создания папок
 
@@ -54,6 +55,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/exam", examRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/topics", topicRoutes);
+app.use("/api/tests/hard-mode", hardModeRoutes);
 
 // Health check
 app.get("/", (req, res) => {
