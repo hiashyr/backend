@@ -20,6 +20,14 @@ export class Topic {
   description!: string | null;
 
   @Column({
+    name: "image_url",
+    type: "varchar",
+    length: 255,
+    nullable: true
+  })
+  imageUrl!: string | null;
+
+  @Column({
     name: "questions_count",
     type: "integer",
     default: 0

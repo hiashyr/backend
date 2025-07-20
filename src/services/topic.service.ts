@@ -57,12 +57,17 @@ class TopicService {
       ORDER BY t.id
     `, [userId]);
 
+    // Получаем все темы с их image_url
+    const allTopics = await this.topicRepo.find();
+    const topicImageMap = new Map(allTopics.map(t => [t.id, t.imageUrl]));
+
     return Array.isArray(result) 
       ? result.map((topic: RawTopicWithProgress) => ({
           ...topic,
           correct_answers: topic.correct_answers || 0,
           questions_answered: topic.questions_answered || 0,
-          questions_total: topic.questions_total || topic.questions_count
+          questions_total: topic.questions_total || topic.questions_count,
+          imageUrl: topicImageMap.get(topic.id) || null
         }))
       : [];
 }

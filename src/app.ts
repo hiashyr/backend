@@ -42,6 +42,7 @@ uploadDirs.forEach(dir => {
 // Статические файлы
 app.use('/api/uploads/avatars', express.static(uploadDirs[0]));
 app.use('/api/uploads/questions', express.static(uploadDirs[1]));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Логирование запросов
 app.use((req, res, next) => {
