@@ -23,7 +23,7 @@ class QuestionController {
 
       res.json({
         success: true,
-        imageUrl: `${process.env.BASE_URL}/uploads/questions/${req.file.filename}`
+        imageUrl: `${process.env.API_URL}/uploads/questions/${req.file.filename}`
       });
     } catch (error) {
       console.error('Ошибка загрузки изображения:', error);

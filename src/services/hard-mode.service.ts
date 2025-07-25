@@ -77,7 +77,7 @@ class HardModeService {
         
         const savedAttempt = await this.attemptRepo.save(attempt);
 
-        const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+        const baseUrl = process.env.API_URL;
         const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
         // Время в секундах: 1 минута на вопрос
@@ -135,7 +135,7 @@ class HardModeService {
             .setParameter('attemptId', attemptId)
             .getMany();
 
-        const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+        const baseUrl = process.env.API_URL;
         const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
         // Время в секундах: 1 минута на вопрос
