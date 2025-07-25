@@ -163,14 +163,14 @@ class ExamService {
           const savedAttempt = await queryRunner.manager.save(attempt);
 
           // 5. Форматируем вопросы
-          const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+          const baseUrl = process.env.API_URL;
           const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
           const formattedQuestions = shuffledQuestions.map(question => ({
             id: question.id,
             text: question.text,
             imageUrl: question.imageUrl 
-              ? `/api/uploads/questions/${question.imageUrl}`
+              ? `${baseUrl}/uploads/questions/${question.imageUrl}`
               : defaultImage,
             topicId: question.topicId,
             isHard: question.isHard,
@@ -299,7 +299,7 @@ class ExamService {
                 totalQuestions: attempt.baseQuestionsCount + additionalCount
             });
 
-            const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+            const baseUrl = process.env.API_URL;
             const defaultImage = `${baseUrl}/images/default-question.jpg`;
 
             additionalQuestions = {
@@ -462,7 +462,7 @@ class ExamService {
         startedAt: new Date(),
       });
 
-      const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+      const baseUrl = process.env.API_URL;
       const defaultImage = `${baseUrl}/images/default-question.jpg`;
 
       await queryRunner.commitTransaction();

@@ -137,7 +137,7 @@ class TopicService {
     
     const savedAttempt = await this.attemptRepo.save(attempt);
 
-    const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+    const baseUrl = process.env.API_URL;
     const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
     console.log('Created attempt with ID:', savedAttempt.id);
@@ -177,7 +177,7 @@ class TopicService {
       const topic = await this.topicRepo.findOneBy({ id: topicId });
       console.log('Topic:', topic);
 
-      const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+      const baseUrl = process.env.API_URL;
       const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
       return {

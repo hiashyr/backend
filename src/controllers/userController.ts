@@ -280,7 +280,7 @@ export const getCurrentUser = async (req: Request, res: Response): Promise<void>
       role: user.role,
       createdAt: user.createdAt,
       avatarUrl: user.avatar_url 
-        ? `${process.env.API_URL || 'http://localhost:5000'}${user.avatar_url}`
+        ? `${process.env.API_URL}${user.avatar_url}`
         : null
     };
 
