@@ -43,10 +43,14 @@ declare global {
 
 export const register = async (req: Request, res: Response): Promise<void> => {
   try {
+    logger.info('Register request body', req.body);
     const registerDto = plainToClass(RegisterDto, req.body);
+    logger.info('RegisterDto created', registerDto);
     const errors = await validate(registerDto);
+    logger.info('Validation errors', errors);
 
     if (errors.length > 0) {
+      logger.warn('Validation failed', errors);
       res.status(400).json({
         error: "VALIDATION_ERROR",
         message: "Ошибка валидации",
@@ -59,20 +63,23 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     }
 
     const { email, password } = registerDto;
-
+    logger.info('Checking existing user', { email });
     const existingUser = await userRepository.findOne({ 
       where: { email },
       relations: ['emailVerificationTokens']
     });
+    logger.info('Existing user found', existingUser);
 
     if (existingUser) {
       // Если пользователь не подтвердил email, разрешаем повторную регистрацию
       if (!existingUser.isVerified) {
+        logger.info('Deleting unverified user and tokens', { userId: existingUser.id });
         await tokenRepository.delete({ 
           user: { id: existingUser.id } 
         });
         await userRepository.delete(existingUser.id);
       } else {
+        logger.warn('Email already exists and verified', { email });
         res.status(400).json({ 
           error: "EMAIL_EXISTS",
           message: "Email уже используется",
@@ -87,32 +94,30 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     user.password_hash = password;
     user.isVerified = false;
 
-    // Логируем перед сохранением
     logger.info('Creating new user', { email, createdAt: user.createdAt });
-
     await userRepository.save(user);
-
-    // Логируем после сохранения
-    logger.info('User created successfully', { 
-      userId: user.id,
-      createdAt: user.createdAt 
-    });
+    logger.info('User created successfully', { userId: user.id, createdAt: user.createdAt });
 
     const token = crypto.randomBytes(32).toString('hex');
     const verificationToken = new EmailVerificationToken();
     verificationToken.token = token;
     verificationToken.user = user;
     verificationToken.expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
-    
+    logger.info('Saving verification token', {
+      userId: user.id,
+      token,
+      expiresAt: verificationToken.expiresAt
+    });
     await tokenRepository.save(verificationToken);
-    
     logger.info('Verification token created', {
       userId: user.id,
       token,
       expiresAt: verificationToken.expiresAt
     });
 
+    logger.info('Sending verification email', { email: user.email, token });
     await sendVerificationEmail(user.email, token);
+    logger.info('Verification email sent', { email: user.email });
 
     res.status(201).json({ 
       success: true,
@@ -120,8 +125,21 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       email: user.email
     });
 
-  } catch (error) {
-    logger.error("Registration error:", error);
+  } catch (error: any) {
+    logger.error("Registration error:", {
+      error,
+      message: error?.message,
+      stack: error?.stack
+    });
+    // Проверяем ошибку уникальности email (PostgreSQL error code 23505)
+    if (error.code === '23505' && error.detail && error.detail.includes('email')) {
+      res.status(409).json({
+        error: "EMAIL_EXISTS",
+        message: "Email уже используется",
+        field: "email"
+      });
+      return;
+    }
     res.status(500).json({ 
       error: "SERVER_ERROR",
       message: "Ошибка при регистрации" 
