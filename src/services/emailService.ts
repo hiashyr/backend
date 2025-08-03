@@ -153,7 +153,8 @@ export const sendVerificationEmail = async (email: string, token: string): Promi
     throw new Error(`Invalid email format: ${email}`);
   }
 
-  const verificationLink = `${process.env.FRONTEND_URL}/verify-email?token=${encodeURIComponent(token)}`;
+  const frontendUrl = process.env.FRONTEND_URL?.split(',')[0] || process.env.FRONTEND_URL;
+  const verificationLink = `${frontendUrl}/verify-email?token=${encodeURIComponent(token)}`;
   
   await sendEmail({
     to: email,
