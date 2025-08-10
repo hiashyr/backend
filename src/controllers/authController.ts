@@ -35,7 +35,7 @@ export const forgotPassword = async (
     await resetTokenRepository.save({
       user,
       token,
-      type: 'reset',
+      // поле type убрано
       expiresAt: new Date(Date.now() + 3600000), // 1 час
       isUsed: false
     });
@@ -86,13 +86,13 @@ export const requestPasswordChange = async (req: Request, res: Response) => {
     await resetTokenRepository.save({
       user,
       token,
-      type: 'change',
+      // поле type убрано
       expiresAt: new Date(Date.now() + 3600000), // 1 час
       isUsed: false
     });
 
     // 5. Отправляем письмо
-    await sendPasswordResetEmail(user.email, token, 'change');
+    await sendPasswordResetEmail(user.email, token);
 
     return res.json({ success: true });
   } catch (error: unknown) { // Явно указываем тип unknown
@@ -116,11 +116,11 @@ export const requestPasswordChange = async (req: Request, res: Response) => {
 export const resetPassword = async (req: Request, res: Response): Promise<void> => {
   try {
     const { token, newPassword } = req.body;
-    
+
     if (!token || !newPassword) {
-      res.status(400).json({ 
+      res.status(400).json({
         error: "MISSING_DATA",
-        message: "Токен и новый пароль обязательны" 
+        message: "Токен и новый пароль обязательны"
       });
       return;
     }
@@ -129,7 +129,6 @@ export const resetPassword = async (req: Request, res: Response): Promise<void> 
       where: { token },
       relations: ['user'],
     });
-    // Можно добавить проверку типа токена, если нужно различать reset/change
 
     if (!resetToken) {
       res.status(400).json({
@@ -163,9 +162,9 @@ export const resetPassword = async (req: Request, res: Response): Promise<void> 
     resetToken.isUsed = true;
     await resetTokenRepository.save(resetToken);
 
-    res.json({ 
+    res.json({
       success: true,
-      message: "Пароль успешно обновлён" 
+      message: "Пароль успешно обновлён"
     });
   } catch (error) {
     console.error('Reset password error:', error);
@@ -177,12 +176,14 @@ export const resetPassword = async (req: Request, res: Response): Promise<void> 
 };
 
 export const checkToken = async (req: Request, res: Response) => {
-  const { token, type } = req.body;
-  
-  const whereClause: any = { token };
-  if (type) whereClause.type = type;
-  const resetToken = await resetTokenRepository.findOne({ 
-    where: whereClause,
+  const { token } = req.body;
+
+  if (!token) {
+    return res.json({ status: 'invalid' });
+  }
+
+  const resetToken = await resetTokenRepository.findOne({
+    where: { token },
     relations: ['user']
   });
 

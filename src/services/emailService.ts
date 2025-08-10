@@ -78,25 +78,16 @@ const sendEmail = async (options: EmailOptions): Promise<void> => {
 };
 
 export const sendPasswordResetEmail = async (
-  email: string, 
-  token: string, // Изменяем параметр с resetLink на token
-  type: 'reset' | 'change' = 'reset'
+  email: string,
+  token: string
 ) => {
   // Формируем полную ссылку
   const frontendUrl = process.env.FRONTEND_URL?.split(',')[0] || process.env.FRONTEND_URL;
-  const resetLink = `${frontendUrl}/reset-password?token=${encodeURIComponent(token)}&type=${type}`;
-  
-  const subject = type === 'change' 
-    ? 'Подтверждение смены пароля' 
-    : 'Восстановление пароля';
+  const resetLink = `${frontendUrl}/reset-password?token=${encodeURIComponent(token)}`;
 
-  const actionText = type === 'change'
-    ? 'Подтвердить смену пароля'
-    : 'Сбросить пароль';
-
-  const purposeText = type === 'change'
-    ? 'подтверждения смены пароля'
-    : 'сброса пароля';
+  const subject = 'Восстановление пароля';
+  const actionText = 'Сбросить пароль';
+  const purposeText = 'сброса пароля';
 
   await sendEmail({
     to: email,
@@ -107,12 +98,12 @@ export const sendPasswordResetEmail = async (
           <h2 style="color: #330570;">ПДД Тренажёр</h2>
           <h3 style="color: #333;">${subject}</h3>
         </div>
-        
+
         <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
           <p style="margin-bottom: 20px;">Для ${purposeText} в вашем аккаунте перейдите по кнопке ниже:</p>
-          
+
           <div style="text-align: center; margin: 25px 0;">
-            <a href="${resetLink}" 
+            <a href="${resetLink}"
                style="display: inline-block; padding: 12px 24px;
                       background-color: #330570; color: white;
                       text-decoration: none; border-radius: 5px;
@@ -120,7 +111,7 @@ export const sendPasswordResetEmail = async (
               ${actionText}
             </a>
           </div>
-          
+
           <p style="color: #666; font-size: 14px; margin-bottom: 5px;">
             Если вы не можете нажать на кнопку, скопируйте и вставьте следующую ссылку в браузер:
           </p>
@@ -128,7 +119,7 @@ export const sendPasswordResetEmail = async (
             ${resetLink}
           </div>
         </div>
-        
+
         <div style="text-align: center; color: #999; font-size: 12px; margin-top: 20px;">
           <p>Это письмо отправлено автоматически. Пожалуйста, не отвечайте на него.</p>
           <p>Если вы не запрашивали ${purposeText}, проигнорируйте это сообщение.</p>
@@ -139,10 +130,10 @@ export const sendPasswordResetEmail = async (
     text: `
       ПДД Тренажёр
       ${subject}
-      
+
       Для ${purposeText} перейдите по ссылке:
       ${resetLink}
-      
+
       Ссылка действительна 1 час.
       Если вы не запрашивали ${purposeText}, проигнорируйте это сообщение.
     `
