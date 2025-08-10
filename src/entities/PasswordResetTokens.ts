@@ -9,6 +9,9 @@ export class PasswordResetToken {
   @Column({ type: "varchar", length: 255, unique: true })
   token!: string;
 
+  @Column({ type: "varchar", length: 20, default: 'reset' })
+  type!: string; // 'reset' | 'change'
+
   @Column({ name: "expires_at", type: "timestamp" })
   expiresAt!: Date;
 

@@ -83,7 +83,8 @@ export const sendPasswordResetEmail = async (
   type: 'reset' | 'change' = 'reset'
 ) => {
   // Формируем полную ссылку
-  const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${encodeURIComponent(token)}&type=${type}`;
+  const frontendUrl = process.env.FRONTEND_URL?.split(',')[0] || process.env.FRONTEND_URL;
+  const resetLink = `${frontendUrl}/reset-password?token=${encodeURIComponent(token)}&type=${type}`;
   
   const subject = type === 'change' 
     ? 'Подтверждение смены пароля' 

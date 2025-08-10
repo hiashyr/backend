@@ -35,6 +35,7 @@ export const forgotPassword = async (
     await resetTokenRepository.save({
       user,
       token,
+      type: 'reset',
       expiresAt: new Date(Date.now() + 3600000), // 1 час
       isUsed: false
     });
@@ -85,6 +86,7 @@ export const requestPasswordChange = async (req: Request, res: Response) => {
     await resetTokenRepository.save({
       user,
       token,
+      type: 'change',
       expiresAt: new Date(Date.now() + 3600000), // 1 час
       isUsed: false
     });
@@ -127,6 +129,7 @@ export const resetPassword = async (req: Request, res: Response): Promise<void> 
       where: { token },
       relations: ['user'],
     });
+    // Можно добавить проверку типа токена, если нужно различать reset/change
 
     if (!resetToken) {
       res.status(400).json({
@@ -174,10 +177,12 @@ export const resetPassword = async (req: Request, res: Response): Promise<void> 
 };
 
 export const checkToken = async (req: Request, res: Response) => {
-  const { token } = req.body;
+  const { token, type } = req.body;
   
+  const whereClause: any = { token };
+  if (type) whereClause.type = type;
   const resetToken = await resetTokenRepository.findOne({ 
-    where: { token },
+    where: whereClause,
     relations: ['user']
   });
 
