@@ -172,10 +172,10 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       const hasActiveToken = user.emailVerificationTokens?.some(
         t => t.expiresAt > new Date()
       );
-      
+
       res.status(403).json({
         error: "EMAIL_NOT_VERIFIED",
-        message: hasActiveToken 
+        message: hasActiveToken
           ? "Подтвердите email, письмо отправлено"
           : "Ссылка истекла. Запросите новое письмо",
         canResend: true
