@@ -559,3 +559,558 @@
 {"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 13:57:03","token":"token-present"}
 {"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 13:57:03","userId":71}
 {"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 13:57:03","userRole":"admin"}
+{"email":"admin@example.com","level":"info","message":"Login attempt","timestamp":"2025-08-17 15:30:19"}
+{"email":"admin@example.com","level":"warn","message":"Login failed - invalid password","timestamp":"2025-08-17 15:30:19"}
+{"email":"admin@example.com","level":"info","message":"Login attempt","timestamp":"2025-08-17 15:30:27"}
+{"email":"admin@example.com","level":"warn","message":"Login failed - invalid password","timestamp":"2025-08-17 15:30:27"}
+{"email":"admin@example.com","level":"info","message":"Login attempt","timestamp":"2025-08-17 15:30:34"}
+{"email":"admin@example.com","level":"info","message":"Login successful","role":"admin","timestamp":"2025-08-17 15:30:34","userId":71}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:34"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:34"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:34","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:34","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:34","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:35"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:35"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:35","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:35","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:35","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:35"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:35"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:35","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:35","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:35","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /admin-stats","timestamp":"2025-08-17 15:30:35"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:35"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:35","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:35","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:35","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:40"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:40"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:40","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:40","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:40","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:40"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:40"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:40","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:40","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:40","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /admin-stats","timestamp":"2025-08-17 15:30:40"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:40"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:40","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:40","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:40","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:41","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:41","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /admin-stats","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:41","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /admin-stats","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /admin-stats","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /admin-stats","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:30:42"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:30:42","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:30:42","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:30:42","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:42:23"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:42:23"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:42:23","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:42:23","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:42:23","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:42:23"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:42:23"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:42:23","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:42:23","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:42:23","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:42:27"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:42:27"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:42:27","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:42:27","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:42:27","userRole":"admin"}
+{"email":"admin@example.com","level":"info","message":"Login attempt","timestamp":"2025-08-17 15:42:45"}
+{"email":"admin@example.com","level":"info","message":"Login successful","role":"admin","timestamp":"2025-08-17 15:42:45","userId":71}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:42:45","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:42:45","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:42:45","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:42:45","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:42:45","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:42:45","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:42:45","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:42:45","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:42:45","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:42:45"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:42:45","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:42:45","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:42:45","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:44:47"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:44:47"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:44:47","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:44:47","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:44:47","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:44:47"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:44:47"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:44:47","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:44:47","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:44:47","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:44:47"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:44:47"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:44:47","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:44:47","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:44:47","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:44:50"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:44:50"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:44:50","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:44:50","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:44:50","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:44:50"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:44:50"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:44:50","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:44:50","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:44:50","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:44:50"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:44:50"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:44:50","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:44:50","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:44:50","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:45:48"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:45:48"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:45:48","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:45:48","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:45:48","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:45:48"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:45:48"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:45:48","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:45:48","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:45:48","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:45:48"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:45:48"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:45:48","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:45:48","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:45:48","userRole":"admin"}
+{"email":"admin@example.com","level":"info","message":"Login attempt","timestamp":"2025-08-17 15:55:57"}
+{"email":"admin@example.com","level":"info","message":"Login successful","role":"admin","timestamp":"2025-08-17 15:55:57","userId":71}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:55:57","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:55:57","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:55:57","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:55:57","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:55:57","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:55:57","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:55:57","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:55:57","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:55:57","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:55:57"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:55:57","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:55:57","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:55:57","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:56:00"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:56:00"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:56:00","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:56:00","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:56:00","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:56:00"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:56:00"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:56:00","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:56:00","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:56:00","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:56:00"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:56:00"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:56:00","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:56:00","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:56:00","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:56:17"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:56:17"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:56:17","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:56:17","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:56:17","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 15:56:17"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:56:17"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:56:17","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:56:17","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:56:17","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 15:56:17"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 15:56:17"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 15:56:17","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 15:56:17","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 15:56:17","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:02:55"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:02:55"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:02:55","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:02:55","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:02:55","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:02:55"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:02:55"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:02:55","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:02:55","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:02:55","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:02:55"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:02:55"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:02:55","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:02:55","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:02:55","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:02:56"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:02:56"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:02:56","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:02:56","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:02:56","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:02:56"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:02:56"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:02:56","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:02:56","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:02:56","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:02:56"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:02:56"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:02:56","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:02:56","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:02:56","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:05:59","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:05:59","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:05:59","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:05:59","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:05:59","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:05:59","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:05:59","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:05:59","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:05:59","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:05:59","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:05:59","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:05:59","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:05:59","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:05:59","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:05:59","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:05:59"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:05:59","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:05:59","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:05:59","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:24"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:24"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:24","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:24","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:24","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:24"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:24"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:24","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:24","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:24","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:09:24"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:24"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:24","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:24","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:24","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:27","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:27","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:27","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:27","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:27","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:27","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:27","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:27","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:27","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:27","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:27","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:27","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:27","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:27","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:27","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:27"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:27","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:27","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:27","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:31"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:31"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:31","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:31","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:31","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:09:31"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:31"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:31","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:31","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:31","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:09:31"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:09:31"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:09:31","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:09:31","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:09:31","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:11:02"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:02"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:02","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:02","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:02","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:11:02"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:02"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:02","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:02","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:02","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:11:02"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:02"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:02","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:02","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:02","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:11:04"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:04"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:04","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:04","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:04","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:11:04"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:04"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:04","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:04","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:04","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:11:04"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:04"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:04","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:04","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:04","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:11:16"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:16"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:16","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:16","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:16","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:11:16"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:16"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:16","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:16","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:16","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:11:16"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:11:16"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:11:16","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:11:16","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:11:16","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:13:04"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:13:04"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:13:04","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:13:04","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:13:04","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:13:04"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:13:04"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:13:04","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:13:04","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:13:04","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:13:04"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:13:04"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:13:04","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:13:04","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:13:04","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:37"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:37"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:37","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:37","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:37","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:39"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:39"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:39","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:39","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:39","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:39"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:39"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:39","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:39","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:39","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:39"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:39"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:39","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:39","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:39","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:41","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:41","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:41","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:41","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:41","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:41"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:41","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:41","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:41","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:43"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:43"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:43","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:43","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:43","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:43"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:43"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:43","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:43","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:43","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:43"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:43"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:43","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:43","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:43","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:44"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:44"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:44","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:44","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:44","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:44"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:44"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:44","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:44","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:44","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:44"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:44"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:44","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:44","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:44","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:47"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:47"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:47","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:47","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:47","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:47"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:47"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:47","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:47","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:47","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:47"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:47"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:47","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:47","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:47","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:54"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:54"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:54","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:54","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:54","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:54"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:54"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:54","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:54","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:54","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:54"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:54"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:54","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:54","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:54","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:58"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:58"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:58","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:58","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:58","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:15:58"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:58"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:58","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:58","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:58","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:15:58"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:15:58"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:15:58","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:15:58","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:15:58","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:16:01"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:16:01"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:16:01","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:16:01","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:16:01","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /me","timestamp":"2025-08-17 16:16:01"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:16:01"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:16:01","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:16:01","userId":71}
+{"allowedRoles":["user","admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:16:01","userRole":"admin"}
+{"level":"info","message":"Auth middleware called for request: GET /dashboard/stats","timestamp":"2025-08-17 16:16:01"}
+{"level":"info","message":"Token received: present","timestamp":"2025-08-17 16:16:01"}
+{"level":"info","message":"Auth middleware - token received","timestamp":"2025-08-17 16:16:01","token":"token-present"}
+{"level":"info","message":"User authenticated successfully","role":"admin","timestamp":"2025-08-17 16:16:01","userId":71}
+{"allowedRoles":["admin"],"level":"info","message":"Role middleware: Access granted","timestamp":"2025-08-17 16:16:01","userRole":"admin"}
