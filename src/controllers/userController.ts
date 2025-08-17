@@ -10,6 +10,7 @@ import { EmailVerificationToken } from '../entities/EmailVerificationToken';
 import logger from '../config/logger';
 import multer from 'multer';
 import path from 'path';
+import fs from 'fs';
 
 // Инициализация репозитория
 const userRepository = AppDataSource.getRepository(User);
@@ -151,14 +152,17 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, password } = req.body;
 
+    logger.info("Login attempt", { email });
+
     // 1. Находим пользователя с email verification tokens
-    const user = await userRepository.findOne({ 
+    const user = await userRepository.findOne({
       where: { email },
       relations: ['emailVerificationTokens'],
       select: ['id', 'email', 'password_hash', 'isVerified', 'role']
     });
 
     if (!user) {
+      logger.warn("Login failed - user not found", { email });
       res.status(401).json({
         error: "INVALID_CREDENTIALS",
         message: "Неверный email или пароль",
@@ -173,6 +177,11 @@ export const login = async (req: Request, res: Response): Promise<void> => {
         t => t.expiresAt > new Date()
       );
 
+      logger.warn("Login failed - email not verified", {
+        email,
+        hasActiveToken
+      });
+
       res.status(403).json({
         error: "EMAIL_NOT_VERIFIED",
         message: hasActiveToken
@@ -186,6 +195,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     // 3. Сравнение пароля
     const isPasswordValid = await user.comparePassword(password);
     if (!isPasswordValid) {
+      logger.warn("Login failed - invalid password", { email });
       res.status(401).json({
         error: "INVALID_CREDENTIALS",
         message: "Неверный email или пароль",
@@ -196,7 +206,23 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     // 4. Генерация JWT токена
     const token = generateToken(user);
-    
+
+    logger.info("Login successful", {
+      userId: user.id,
+      email: user.email,
+      role: user.role
+    });
+
+    // Log to file
+    const logFilePath = path.join(__dirname, '../logs/login.log');
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] Login successful - User ID: ${user.id}, Email: ${user.email}, Role: ${user.role}\n`;
+    fs.appendFile(logFilePath, logMessage, (err) => {
+      if (err) {
+        console.error('Error writing to log file:', err);
+      }
+    });
+
     res.json({
       success: true,
       token,
@@ -208,7 +234,21 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     });
 
   } catch (error) {
-    logger.error("Login error:", error);
+    logger.error("Login error:", {
+      error: error instanceof Error ? error.message : "Unknown error",
+      stack: error instanceof Error ? error.stack : undefined
+    });
+
+    // Log to file
+    const logFilePath = path.join(__dirname, '../logs/login.log');
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] Login error: ${error instanceof Error ? error.message : 'Unknown error'}\n`;
+    fs.appendFile(logFilePath, logMessage, (err) => {
+      if (err) {
+        console.error('Error writing to log file:', err);
+      }
+    });
+
     res.status(500).json({
       error: "SERVER_ERROR",
       message: "Ошибка при авторизации"
