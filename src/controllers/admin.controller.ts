@@ -2,7 +2,9 @@ import { Request, Response } from 'express';
 import { AppDataSource } from '../config/data-source';
 import { TestAttempt } from '../entities/TestAttempt';
 import { Topic } from '../entities/Topic';
-import { Not, IsNull } from 'typeorm';
+import { User } from '../entities/User';
+import { Question } from '../entities/Question';
+import { Not, IsNull, Between } from 'typeorm';
 
 class AdminController {
   async getDashboardStats(req: Request, res: Response): Promise<void> {
@@ -69,12 +71,30 @@ class AdminController {
         ? Math.round((totalCorrectAnswers / totalQuestions) * 100)
         : 0;
 
+      // Total users
+      const totalUsers = await AppDataSource.getRepository(User).count();
+
+      // Users registered in the last month
+      const oneMonthAgo = new Date();
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+      const usersRegisteredLastMonth = await AppDataSource.getRepository(User).count({
+        where: {
+          createdAt: Between(oneMonthAgo, new Date()),
+        },
+      });
+
+      // Total questions
+      const totalQuestionsCount = await AppDataSource.getRepository(Question).count();
+
       res.json({
         totalAttempts,
         statusCounts,
         typeCounts,
         topicCounts: topicSessionCounts,
         averageCorrectRate,
+        totalUsers,
+        usersRegisteredLastMonth,
+        totalQuestionsCount,
       });
     } catch (error) {
       console.error('AdminController.getDashboardStats error:', error);
