@@ -5,10 +5,21 @@ import { Topic } from '../entities/Topic';
 import { User } from '../entities/User';
 import { Question } from '../entities/Question';
 import { Answer } from '../entities/Answer';
-import { Not, IsNull, Between } from 'typeorm';
+import { Not, IsNull, Between, In, Repository } from 'typeorm';
+import { validate } from 'class-validator';
+import { plainToClass } from 'class-transformer';
+import { QuestionDto, AnswerDto } from '../dtos/question.dto';
 
 class AdminController {
-  async getDashboardStats(req: Request, res: Response): Promise<void> {
+  private questionRepository: Repository<Question>;
+  private answerRepository: Repository<Answer>;
+
+  constructor() {
+    this.questionRepository = AppDataSource.getRepository(Question);
+    this.answerRepository = AppDataSource.getRepository(Answer);
+  }
+
+  async getDashboardStats(req: Request, res: Response): Promise<Response> {
     try {
       // Total test attempts
       const totalAttempts = await AppDataSource.getRepository(TestAttempt).count();
@@ -85,9 +96,9 @@ class AdminController {
       });
 
       // Total questions
-      const totalQuestionsCount = await AppDataSource.getRepository(Question).count();
+      const totalQuestionsCount = await this.questionRepository.count();
 
-      res.json({
+      return res.json({
         totalAttempts,
         statusCounts,
         typeCounts,
@@ -99,7 +110,7 @@ class AdminController {
       });
     } catch (error) {
       console.error('AdminController.getDashboardStats error:', error);
-      res.status(500).json({
+      return res.status(500).json({
         error: 'Failed to get dashboard stats',
         ...(process.env.NODE_ENV !== 'production' && {
           details: error instanceof Error ? error.message : 'Unknown error',
@@ -108,13 +119,13 @@ class AdminController {
     }
   }
 
-  async getQuestions(req: Request, res: Response): Promise<void> {
+  async getQuestions(req: Request, res: Response): Promise<Response> {
     const page = parseInt(req.query.page as string) || 1;
     const limit = parseInt(req.query.limit as string) || 20;
     const offset = (page - 1) * limit;
 
     try {
-      const [questions, total] = await AppDataSource.getRepository(Question)
+      const [questions, total] = await this.questionRepository
         .createQueryBuilder('question')
         .leftJoinAndSelect('question.topic', 'topic')
         .leftJoinAndSelect('question.answers', 'answers')
@@ -124,15 +135,133 @@ class AdminController {
 
       const totalPages = Math.ceil(total / limit);
 
-      res.json({
+      return res.json({
         questions,
         currentPage: page,
         totalPages,
       });
     } catch (error) {
       console.error('AdminController.getQuestions error:', error);
-      res.status(500).json({
+      return res.status(500).json({
         error: 'Failed to get questions',
+        ...(process.env.NODE_ENV !== 'production' && {
+          details: error instanceof Error ? error.message : 'Unknown error',
+        }),
+      });
+    }
+  }
+
+  async getQuestion(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+
+    try {
+      const question = await this.questionRepository
+        .createQueryBuilder('question')
+        .leftJoinAndSelect('question.topic', 'topic')
+        .leftJoinAndSelect('question.answers', 'answers')
+        .where('question.id = :id', { id: parseInt(id as string, 10) })
+        .getOne();
+
+      if (!question) {
+        return res.status(404).json({ error: 'Вопрос не найден' });
+      }
+
+      return res.json(question);
+    } catch (error) {
+      console.error('AdminController.getQuestion error:', error);
+      return res.status(500).json({
+        error: 'Failed to get question',
+        ...(process.env.NODE_ENV !== 'production' && {
+          details: error instanceof Error ? error.message : 'Unknown error',
+        }),
+      });
+    }
+  }
+
+  async updateQuestion(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const questionDto = plainToClass(QuestionDto, req.body);
+
+    // Validate the DTO
+    const errors = await validate(questionDto);
+    if (errors.length > 0) {
+      return res.status(400).json({
+        error: 'Invalid input',
+        details: errors.map(e => e.constraints ? Object.values(e.constraints) : []),
+      });
+    }
+
+    try {
+      const question = await this.questionRepository.findOneBy({ id: parseInt(id, 10) });
+
+      if (!question) {
+        return res.status(404).json({ error: 'Вопрос не найден' });
+      }
+
+      // Update question fields
+      question.text = questionDto.text;
+      question.topicId = questionDto.topicId;
+      question.imageUrl = questionDto.imageUrl ?? null;
+
+      // Update answers
+      for (const answerDto of questionDto.answers) {
+        let answer = await this.answerRepository.findOneBy({ id: answerDto.id });
+        if (answer) {
+          // Update existing answer
+          answer.text = answerDto.text;
+          answer.isCorrect = answerDto.isCorrect;
+          await this.answerRepository.save(answer);
+        } else {
+          // Create new answer
+          const newAnswer = this.answerRepository.create({
+            ...answerDto,
+            question: question,
+          });
+          await this.answerRepository.save(newAnswer);
+        }
+      }
+
+      // Remove any answers that were deleted
+      const existingAnswerIds = questionDto.answers.map((a: AnswerDto) => a.id);
+      const answersToRemove = await this.answerRepository.find({
+        where: {
+          question: { id: parseInt(id, 10) },
+          id: Not(In(existingAnswerIds)),
+        },
+      });
+      await this.answerRepository.remove(answersToRemove);
+
+      await this.questionRepository.save(question);
+
+      return res.json({ success: true, message: 'Вопрос успешно обновлен' });
+    } catch (error) {
+      console.error('AdminController.updateQuestion error:', error);
+      return res.status(500).json({
+        error: 'Failed to update question',
+        ...(process.env.NODE_ENV !== 'production' && {
+          details: error instanceof Error ? error.message : 'Unknown error',
+        }),
+      });
+    }
+  }
+
+  async deleteQuestion(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+
+    try {
+      const question = await this.questionRepository.findOneBy({ id: parseInt(id, 10) });
+
+      if (!question) {
+        return res.status(404).json({ error: 'Вопрос не найден' });
+      }
+
+      await this.questionRepository.remove(question);
+
+      return res.json({ success: true, message: 'Вопрос успешно удален' });
+    } catch (error) {
+      console.error('AdminController.deleteQuestion error:', error);
+      return res.status(500).json({
+        error: 'Failed to delete question',
         ...(process.env.NODE_ENV !== 'production' && {
           details: error instanceof Error ? error.message : 'Unknown error',
         }),

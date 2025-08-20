@@ -15,4 +15,19 @@ router.get('/questions', authMiddleware, restrictToUserRole(['admin']), (req, re
   AdminController.getQuestions(req, res).catch(next);
 });
 
+// Admin question detail
+router.get('/questions/:id', authMiddleware, restrictToUserRole(['admin']), (req, res, next) => {
+  AdminController.getQuestion(req, res).catch(next);
+});
+
+// Admin update question
+router.put('/questions/:id', authMiddleware, restrictToUserRole(['admin']), (req, res, next) => {
+  AdminController.updateQuestion(req, res).catch(next);
+});
+
+// Admin delete question
+router.delete('/questions/:id', authMiddleware, restrictToUserRole(['admin']), (req, res, next) => {
+  AdminController.deleteQuestion(req, res).catch(next);
+});
+
 export default router;

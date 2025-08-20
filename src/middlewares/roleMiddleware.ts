@@ -22,13 +22,12 @@ export function restrictToUserRole(allowedRoles: string[]) {
         userRole: req.userRole
       });
 
-      // Redirect admin users to dashboard
-      if (req.userRole === 'admin') {
-        return res.status(302).json({ redirect: '/admin/dashboard' });
-      }
-
-      // Redirect other users to home
-      return res.status(302).json({ redirect: '/' });
+      // Return a 403 Forbidden status with a clear error message
+      return res.status(403).json({
+        error: "Access denied: Insufficient permissions",
+        allowedRoles,
+        userRole: req.userRole
+      });
     }
 
     logger.info("Role middleware: Access granted", {
