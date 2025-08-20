@@ -10,4 +10,9 @@ router.get('/dashboard/stats', authMiddleware, restrictToUserRole(['admin']), (r
   AdminController.getDashboardStats(req, res).catch(next);
 });
 
+// Admin questions
+router.get('/questions', authMiddleware, restrictToUserRole(['admin']), (req, res, next) => {
+  AdminController.getQuestions(req, res).catch(next);
+});
+
 export default router;

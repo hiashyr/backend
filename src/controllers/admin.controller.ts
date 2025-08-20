@@ -4,6 +4,7 @@ import { TestAttempt } from '../entities/TestAttempt';
 import { Topic } from '../entities/Topic';
 import { User } from '../entities/User';
 import { Question } from '../entities/Question';
+import { Answer } from '../entities/Answer';
 import { Not, IsNull, Between } from 'typeorm';
 
 class AdminController {
@@ -100,6 +101,38 @@ class AdminController {
       console.error('AdminController.getDashboardStats error:', error);
       res.status(500).json({
         error: 'Failed to get dashboard stats',
+        ...(process.env.NODE_ENV !== 'production' && {
+          details: error instanceof Error ? error.message : 'Unknown error',
+        }),
+      });
+    }
+  }
+
+  async getQuestions(req: Request, res: Response): Promise<void> {
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 20;
+    const offset = (page - 1) * limit;
+
+    try {
+      const [questions, total] = await AppDataSource.getRepository(Question)
+        .createQueryBuilder('question')
+        .leftJoinAndSelect('question.topic', 'topic')
+        .leftJoinAndSelect('question.answers', 'answers')
+        .skip(offset)
+        .take(limit)
+        .getManyAndCount();
+
+      const totalPages = Math.ceil(total / limit);
+
+      res.json({
+        questions,
+        currentPage: page,
+        totalPages,
+      });
+    } catch (error) {
+      console.error('AdminController.getQuestions error:', error);
+      res.status(500).json({
+        error: 'Failed to get questions',
         ...(process.env.NODE_ENV !== 'production' && {
           details: error instanceof Error ? error.message : 'Unknown error',
         }),
