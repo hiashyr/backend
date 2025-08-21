@@ -166,6 +166,11 @@ class AdminController {
         return res.status(404).json({ error: 'Вопрос не найден' });
       }
 
+      // Construct the full URL for the image if it's a relative path
+      if (question.imageUrl && !question.imageUrl.startsWith('http')) {
+        question.imageUrl = `${req.protocol}://${req.get('host')}/uploads/questions/${question.imageUrl}`;
+      }
+
       return res.json(question);
     } catch (error) {
       console.error('AdminController.getQuestion error:', error);
@@ -233,7 +238,7 @@ class AdminController {
 
       await this.questionRepository.save(question);
 
-      return res.json({ success: true, message: 'Вопрос успешно обновлен' });
+      return res.json({ success: true, notification: { message: 'Вопрос успешно обновлен', type: 'success' } });
     } catch (error) {
       console.error('AdminController.updateQuestion error:', error);
       return res.status(500).json({
@@ -257,7 +262,7 @@ class AdminController {
 
       await this.questionRepository.remove(question);
 
-      return res.json({ success: true, message: 'Вопрос успешно удален' });
+      return res.json({ success: true, notification: { message: 'Вопрос успешно удален', type: 'success' } });
     } catch (error) {
       console.error('AdminController.deleteQuestion error:', error);
       return res.status(500).json({
