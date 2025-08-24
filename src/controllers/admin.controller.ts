@@ -9,6 +9,7 @@ import { Not, IsNull, Between, In, Repository } from 'typeorm';
 import { validate } from 'class-validator';
 import { plainToClass } from 'class-transformer';
 import { QuestionDto, AnswerDto } from '../dtos/question.dto';
+import logger from '../config/logger';
 
 class AdminController {
   private questionRepository: Repository<Question>;
@@ -267,6 +268,67 @@ class AdminController {
       console.error('AdminController.deleteQuestion error:', error);
       return res.status(500).json({
         error: 'Failed to delete question',
+        ...(process.env.NODE_ENV !== 'production' && {
+          details: error instanceof Error ? error.message : 'Unknown error',
+        }),
+      });
+    }
+  }
+
+  async addQuestion(req: Request, res: Response): Promise<Response> {
+    logger.info('Incoming request to add question:', req.body);
+
+    // Parse answers from string to array
+    if (typeof req.body.answers === 'string') {
+      try {
+        req.body.answers = JSON.parse(req.body.answers);
+      } catch (error) {
+        logger.error('Failed to parse answers:', error);
+        return res.status(400).json({
+          error: 'Invalid input',
+          details: [['answers must be a valid JSON array']],
+        });
+      }
+    }
+
+    const questionDto = plainToClass(QuestionDto, req.body);
+
+    // Validate the DTO
+    const errors = await validate(questionDto);
+    if (errors.length > 0) {
+      logger.error('Validation errors:', errors);
+      return res.status(400).json({
+        error: 'Invalid input',
+        details: errors.map(e => e.constraints ? Object.values(e.constraints) : []),
+      });
+    }
+
+    try {
+      const question = this.questionRepository.create({
+        text: questionDto.text,
+        topicId: parseInt(questionDto.topicId.toString(), 10),
+        isHard: questionDto.isHard,
+        imageUrl: req.file ? req.file.filename : null,
+      });
+
+      await this.questionRepository.save(question);
+
+      // Save answers
+      for (const answerDto of questionDto.answers) {
+        const answer = this.answerRepository.create({
+          ...answerDto,
+          question: question,
+        });
+        await this.answerRepository.save(answer);
+      }
+
+      logger.info(`Question added: ${question.text}`);
+
+      return res.json({ success: true, notification: { message: 'Вопрос успешно добавлен', type: 'success' } });
+    } catch (error) {
+      logger.error('AdminController.addQuestion error:', error);
+      return res.status(500).json({
+        error: 'Failed to add question',
         ...(process.env.NODE_ENV !== 'production' && {
           details: error instanceof Error ? error.message : 'Unknown error',
         }),

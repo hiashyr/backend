@@ -1,5 +1,5 @@
-import { IsNotEmpty, IsString, IsArray, ValidateNested, IsOptional, IsBoolean, IsInt } from 'class-validator';
-import { Type } from 'class-transformer';
+import { IsNotEmpty, IsString, IsArray, ValidateNested, IsOptional, IsBoolean, IsInt, IsIn } from 'class-validator';
+import { Type, Transform } from 'class-transformer';
 
 export class AnswerDto {
   @IsInt()
@@ -20,11 +20,17 @@ export class QuestionDto {
 
   @IsInt()
   @IsNotEmpty()
+  @Transform(({ value }) => parseInt(value.toString(), 10))
   topicId!: number;
 
   @IsString()
   @IsOptional()
   imageUrl?: string;
+
+  @IsBoolean()
+  @IsNotEmpty()
+  @Transform(({ value }) => value === 'true' || value === true)
+  isHard!: boolean;
 
   @IsArray()
   @ValidateNested({ each: true })

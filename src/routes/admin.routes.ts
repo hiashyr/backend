@@ -2,6 +2,7 @@ import { Router } from 'express';
 import AdminController from '../controllers/admin.controller';
 import authMiddleware from '../middlewares/authMiddleware';
 import { restrictToUserRole } from '../middlewares/roleMiddleware';
+import { uploadQuestionImage } from '../config/multer';
 
 const router = Router();
 
@@ -28,6 +29,11 @@ router.put('/questions/:id', authMiddleware, restrictToUserRole(['admin']), (req
 // Admin delete question
 router.delete('/questions/:id', authMiddleware, restrictToUserRole(['admin']), (req, res, next) => {
   AdminController.deleteQuestion(req, res).catch(next);
+});
+
+// Admin add question
+router.post('/questions', authMiddleware, restrictToUserRole(['admin']), uploadQuestionImage.single('image'), (req, res, next) => {
+  AdminController.addQuestion(req, res).catch(next);
 });
 
 export default router;
