@@ -1,4 +1,5 @@
 import { AppDataSource } from '../config/data-source';
+import logger from '../config/logger';
 import { TopicProgress } from '../entities/TopicProgress';
 import { TestAttempt } from '../entities/TestAttempt';
 import { User } from '../entities/User';
@@ -40,36 +41,49 @@ class TopicService {
   private userAnswerRepo = AppDataSource.getRepository(UserAnswer);
 
   async getTopicsWithProgress(userId: number): Promise<TopicWithProgress[]> {
-    const result = await AppDataSource.query<RawTopicWithProgress[]>(`
-      SELECT 
-        t.id,
-        t.name,
-        t.description,
-        t.questions_count,
-        COALESCE(tp.status, 'not_started') as status,
-        tp.correct_answers,
-        tp.questions_answered,
-        tp.questions_total,
-        a.completed_at as last_attempt_date
-      FROM topics t
-      LEFT JOIN topic_progress tp ON t.id = tp.topic_id AND tp.user_id = $1
-      LEFT JOIN test_attempts a ON a.id = tp.last_attempt_id
-      ORDER BY t.id
-    `, [userId]);
+    try {
+      logger.info(`Fetching topics with progress for user ID: ${userId}`);
 
-    // Получаем все темы с их image_url
-    const allTopics = await this.topicRepo.find();
-    const topicImageMap = new Map(allTopics.map(t => [t.id, t.imageUrl]));
+      const result = await AppDataSource.query<RawTopicWithProgress[]>(`
+        SELECT
+          t.id,
+          t.name,
+          t.description,
+          t.questions_count,
+          COALESCE(tp.status, 'not_started') as status,
+          tp.correct_answers,
+          tp.questions_answered,
+          tp.questions_total,
+          a.completed_at as last_attempt_date
+        FROM topics t
+        LEFT JOIN topic_progress tp ON t.id = tp.topic_id AND tp.user_id = $1
+        LEFT JOIN test_attempts a ON a.id = tp.last_attempt_id
+        ORDER BY t.id
+      `, [userId]);
 
-    return Array.isArray(result) 
-      ? result.map((topic: RawTopicWithProgress) => ({
-          ...topic,
-          correct_answers: topic.correct_answers || 0,
-          questions_answered: topic.questions_answered || 0,
-          questions_total: topic.questions_total || topic.questions_count,
-          imageUrl: topicImageMap.get(topic.id) || null
-        }))
-      : [];
+      logger.info(`Fetched ${result.length} topics for user ID: ${userId}`);
+
+      // Получаем все темы с их image_url
+      const allTopics = await this.topicRepo.find();
+      const topicImageMap = new Map(allTopics.map(t => [t.id, t.imageUrl]));
+
+      const topicsWithProgress = Array.isArray(result)
+        ? result.map((topic: RawTopicWithProgress) => ({
+            ...topic,
+            correct_answers: topic.correct_answers || 0,
+            questions_answered: topic.questions_answered || 0,
+            questions_total: topic.questions_total || topic.questions_count,
+            imageUrl: topicImageMap.get(topic.id) || null
+          }))
+        : [];
+
+      logger.info(`Processed topics with progress for user ID: ${userId}`, { topics: topicsWithProgress });
+
+      return topicsWithProgress;
+    } catch (error) {
+      logger.error(`Error fetching topics with progress for user ID: ${userId}`, { error });
+      throw error;
+    }
 }
   private async ensureTopicExists(topicId: number): Promise<void> {
     const topic = await this.topicRepo.findOneBy({ id: topicId });
