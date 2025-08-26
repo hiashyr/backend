@@ -3,7 +3,8 @@ import { Type, Transform } from 'class-transformer';
 
 export class AnswerDto {
   @IsInt()
-  id!: number;
+  @IsOptional()
+  id?: number;
 
   @IsString()
   @IsNotEmpty()

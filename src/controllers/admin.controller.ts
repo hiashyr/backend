@@ -261,11 +261,22 @@ class AdminController {
         return res.status(404).json({ error: 'Вопрос не найден' });
       }
 
+      // First, delete all related answers
+      await this.answerRepository.delete({ question: { id: question.id } });
+
+      // Then, delete the question
       await this.questionRepository.remove(question);
 
       return res.json({ success: true, notification: { message: 'Вопрос успешно удален', type: 'success' } });
     } catch (error) {
       console.error('AdminController.deleteQuestion error:', error);
+      logger.error('AdminController.deleteQuestion error details:', {
+        error: (error as any).message,
+        stack: (error as any).stack,
+        query: (error as any).query,
+        parameters: (error as any).parameters,
+        driverError: (error as any).driverError,
+      });
       return res.status(500).json({
         error: 'Failed to delete question',
         ...(process.env.NODE_ENV !== 'production' && {
@@ -315,8 +326,10 @@ class AdminController {
 
       // Save answers
       for (const answerDto of questionDto.answers) {
+        // If id is not provided, it will be auto-generated
         const answer = this.answerRepository.create({
-          ...answerDto,
+          text: answerDto.text,
+          isCorrect: answerDto.isCorrect,
           question: question,
         });
         await this.answerRepository.save(answer);
