@@ -12,6 +12,7 @@ import {
   getPoint,
   updatePoint,
   deletePoint,
+  getAllTheoryRules,
 } from "../controllers/rule.controller";
 
 const router = Router();
@@ -30,5 +31,7 @@ router.post("/theory-topics/:topicId/theory-points", createPoint);
 router.get("/theory-points/:id", getPoint);
 router.put("/theory-points/:id", updatePoint);
 router.delete("/theory-points/:id", deletePoint);
+
+router.get("/theory-rules", getAllTheoryRules);
 
 export default router;

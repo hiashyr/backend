@@ -128,3 +128,12 @@ export const deletePoint = async (req: Request, res: Response) => {
     res.status(500).json({ message: (error as Error).message });
   }
 };
+
+export const getAllTheoryRules = async (req: Request, res: Response) => {
+  try {
+    const rules = await theoryRuleService.getAllTheoryRules();
+    res.status(200).json(rules);
+  } catch (error) {
+    res.status(500).json({ message: (error as Error).message });
+  }
+};

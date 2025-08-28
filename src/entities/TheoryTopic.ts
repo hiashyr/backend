@@ -22,12 +22,12 @@ export class TheoryTopic {
   @OneToMany(() => TheoryPoint, (point) => point.topic)
   points: TheoryPoint[];
 
-  constructor(id?: number, text?: string, createdAt?: Date, updatedAt?: Date, rule?: TheoryRule, points?: TheoryPoint[]) {
+  constructor(points: TheoryPoint[], id?: number, text?: string, createdAt?: Date, updatedAt?: Date, rule?: TheoryRule) {
     this.id = id ?? 0;
     this.text = text ?? "";
     this.createdAt = createdAt ?? new Date();
     this.updatedAt = updatedAt ?? new Date();
     this.rule = rule ?? undefined;
-    this.points = points ?? [];
+    this.points = points;
   }
 }

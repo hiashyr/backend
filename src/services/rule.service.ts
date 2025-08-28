@@ -75,4 +75,10 @@ export class TheoryRuleService {
   async deletePoint(id: number): Promise<void> {
     await this.pointRepository.delete(id);
   }
+
+  async getAllTheoryRules(): Promise<TheoryRule[]> {
+    return await this.ruleRepository.find({
+      relations: ["topics", "topics.points"],
+    });
+  }
 }

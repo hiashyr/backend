@@ -4,25 +4,18 @@ import { TheoryTopic } from "./TheoryTopic";
 @Entity()
 export class TheoryRule {
   @PrimaryGeneratedColumn()
-  id: number;
+  id?: number;
 
   @Column("text")
-  text: string;
+  text?: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt?: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt?: Date;
 
   @OneToMany(() => TheoryTopic, (topic) => topic.rule)
-  topics: TheoryTopic[];
+  topics?: TheoryTopic[];
 
-  constructor(id?: number, text?: string, createdAt?: Date, updatedAt?: Date, topics?: TheoryTopic[]) {
-    this.id = id ?? 0;
-    this.text = text ?? "";
-    this.createdAt = createdAt ?? new Date();
-    this.updatedAt = updatedAt ?? new Date();
-    this.topics = topics ?? [];
-  }
 }
