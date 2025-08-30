@@ -14,18 +14,18 @@ export class TheoryTopic {
   text!: string;
 
   @Column({
-    name: "created_at",
+    name: "createdat",
     type: "timestamp",
     default: () => "CURRENT_TIMESTAMP"
   })
-  createdAt!: Date;
+  createdat!: Date;
 
   @Column({
-    name: "updated_at",
+    name: "updatedat",
     type: "timestamp",
     default: () => "CURRENT_TIMESTAMP"
   })
-  updatedAt!: Date;
+  updatedat!: Date;
 
   @OneToMany(() => TheoryPoint, theoryPoint => theoryPoint.topic)
   points!: TheoryPoint[];

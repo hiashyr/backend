@@ -14,22 +14,22 @@ export class TheoryPoint {
   text!: string;
 
   @ManyToOne(() => TheoryTopic, theoryTopic => theoryTopic.points)
-  @JoinColumn({ name: "topic_id" }) // Добавляем JoinColumn
+  @JoinColumn({ name: "topicid" }) // Добавляем JoinColumn
   topic!: TheoryTopic;
 
   @Column({
-    name: "created_at",
+    name: "createdat",
     type: "timestamp",
     default: () => "CURRENT_TIMESTAMP"
   })
-  createdAt!: Date;
+  createdat!: Date;
 
   @Column({
-    name: "updated_at",
+    name: "updatedat",
     type: "timestamp",
     default: () => "CURRENT_TIMESTAMP"
   })
-  updatedAt!: Date;
+  updatedat!: Date;
 
   @OneToMany(() => TheoryRule, theoryRule => theoryRule.point)
   rules!: TheoryRule[];

@@ -13,20 +13,20 @@ export class TheoryRule {
   text!: string;
 
   @ManyToOne(() => TheoryPoint, theoryPoint => theoryPoint.rules)
-  @JoinColumn({ name: "point_id" }) // Добавляем JoinColumn
+  @JoinColumn({ name: "pointid" }) // Добавляем JoinColumn
   point!: TheoryPoint;
 
   @Column({
-    name: "created_at",
+    name: "createdat",
     type: "timestamp",
     default: () => "CURRENT_TIMESTAMP"
   })
-  createdAt!: Date;
+  createdat!: Date;
 
   @Column({
-    name: "updated_at",
+    name: "updatedat",
     type: "timestamp",
     default: () => "CURRENT_TIMESTAMP"
   })
-  updatedAt!: Date;
+  updatedat!: Date;
 }

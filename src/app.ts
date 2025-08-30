@@ -9,6 +9,9 @@ import questionRoutes from './routes/question.routes'; // Добавляем н�
 import topicRoutes from './routes/topic.routes'; // Добавляем этот импорт
 import hardModeRoutes from './routes/hard-mode.routes';
 import adminRoutes from './routes/admin.routes'; // Добавляем админ роут
+import theoryRuleRoutes from './routes/theoryRule.routes';
+import theoryTopicRoutes from './routes/theoryTopic.routes';
+import theoryPointRoutes from './routes/theoryPoint.routes';
 import path from "path";
 import fs from "fs"; // Для создания папок
 
@@ -59,6 +62,9 @@ app.use("/api/questions", questionRoutes);
 app.use("/api/topics", topicRoutes);
 app.use("/api/tests/hard-mode", hardModeRoutes);
 app.use("/api/admin", adminRoutes); // Добавляем админ роут
+app.use("/api/theory-rules", theoryRuleRoutes);
+app.use("/api/theory-topics", theoryTopicRoutes);
+app.use("/api/theory-points", theoryPointRoutes);
 
 // Health check
 app.get("/", (req, res) => {
