@@ -7,8 +7,12 @@ class TheoryRuleService {
 
   async getRules(): Promise<TheoryRule[]> {
     try {
-      logger.info('Fetching rules');
-      return await this.ruleRepo.find();
+      logger.info('Fetching rules with points');
+      return await this.ruleRepo.find({
+        relations: {
+          point: true
+        }
+      });
     } catch (error) {
       logger.error('Error fetching rules:', { error });
       throw error;
@@ -18,7 +22,12 @@ class TheoryRuleService {
   async getRule(ruleId: number): Promise<TheoryRule | null> {
     try {
       logger.info(`Fetching rule with ID: ${ruleId}`);
-      return await this.ruleRepo.findOneBy({ id: ruleId });
+      return await this.ruleRepo.findOne({
+        where: { id: ruleId },
+        relations: {
+          point: true
+        }
+      });
     } catch (error) {
       logger.error(`Error fetching rule with ID: ${ruleId}`, { error });
       throw error;

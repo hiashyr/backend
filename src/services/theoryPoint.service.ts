@@ -7,8 +7,12 @@ class TheoryPointService {
 
   async getPoints(): Promise<TheoryPoint[]> {
     try {
-      logger.info('Fetching points');
-      return await this.pointRepo.find();
+      logger.info('Fetching points with rules');
+      return await this.pointRepo.find({
+        relations: {
+          rules: true
+        }
+      });
     } catch (error) {
       logger.error('Error fetching points:', { error });
       throw error;
@@ -18,7 +22,12 @@ class TheoryPointService {
   async getPoint(pointId: number): Promise<TheoryPoint | null> {
     try {
       logger.info(`Fetching point with ID: ${pointId}`);
-      return await this.pointRepo.findOneBy({ id: pointId });
+      return await this.pointRepo.findOne({
+        where: { id: pointId },
+        relations: {
+          rules: true
+        }
+      });
     } catch (error) {
       logger.error(`Error fetching point with ID: ${pointId}`, { error });
       throw error;
