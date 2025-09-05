@@ -154,7 +154,6 @@ class TopicService {
     const baseUrl = process.env.API_URL;
     const defaultImage = `/api/uploads/questions/default-question.jpg`;
 
-    console.log('Created attempt with ID:', savedAttempt.id);
     return {
       attemptId: savedAttempt.id,
       questions: questions.map(q => ({
@@ -168,7 +167,6 @@ class TopicService {
   }
 
   async getAttempt(topicId: number, attemptId: number, userId: number) {
-      console.log('Getting attempt:', { topicId, attemptId, userId });
       
       const attempt = await this.attemptRepo.findOne({
           where: { 
@@ -179,17 +177,13 @@ class TopicService {
           relations: ['userAnswers']
       });
 
-      console.log('Found attempt:', attempt);
-
       if (!attempt) {
           throw new Error(`Attempt not found for ID: ${attemptId}`);
       }
 
       const questions = await this.getTopicQuestions(topicId);
-      console.log('Questions for topic:', questions);
 
       const topic = await this.topicRepo.findOneBy({ id: topicId });
-      console.log('Topic:', topic);
 
       const baseUrl = process.env.API_URL;
       const defaultImage = `/api/uploads/questions/default-question.jpg`;

@@ -1,3 +1,6 @@
 node_modules/
 uploads/avatars/
 logs/
+build/
+dist/
+docker-compose.override.yml
