@@ -12,7 +12,7 @@ const redisClient = process.env.REDIS_URL
 // Создаем хранилище для ограничителя
 const store = redisClient 
   ? new RedisStore({
-      sendCommand: (...args: string[]) => redisClient.call(...args),
+      sendCommand: (...args: string[]) => redisClient.call(args[0], ...args.slice(1)) as Promise<any>,
     })
   : undefined; // Если Redis не доступен, будет использоваться память
 
@@ -90,4 +90,4 @@ export const checkDuplicateEmail = async (req: Request, res: Response, next: Nex
     logger.error('Rate limiter error:', error);
     next();
   }
-}; 
+};
