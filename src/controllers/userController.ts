@@ -141,9 +141,9 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       });
       return;
     }
-    res.status(500).json({ 
+res.status(500).json({
       error: "SERVER_ERROR",
-      message: "Ошибка при регистрации" 
+      message: "Внутренняя ошибка сервера"
     });
   }
 };

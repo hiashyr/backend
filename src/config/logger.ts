@@ -19,17 +19,17 @@ const logger = createLogger({
         })
       )
     }),
-    new transports.File({ 
-      filename: path.join('logs', 'error.log'), 
-      level: 'error' 
+    new transports.File({
+      filename: path.join(__dirname, '..', 'logs', 'error.log'),
+      level: 'error'
     }),
-    new transports.File({ 
-      filename: path.join('logs', 'combined.log') 
+    new transports.File({
+      filename: path.join(__dirname, '..', 'logs', 'combined.log')
     })
   ],
   exceptionHandlers: [
-    new transports.File({ 
-      filename: path.join('logs', 'exceptions.log') 
+    new transports.File({
+      filename: path.join(__dirname, '..', 'logs', 'exceptions.log')
     })
   ]
 });

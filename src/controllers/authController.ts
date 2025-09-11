@@ -98,7 +98,7 @@ export const requestPasswordChange = async (req: Request, res: Response) => {
   } catch (error: unknown) { // Явно указываем тип unknown
     console.error('Password change request error:', error);
     
-    let errorMessage = "Internal server error";
+    let errorMessage = "Внутренняя ошибка сервера";
     if (error instanceof Error) {
       errorMessage = error.message;
     }

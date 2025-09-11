@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Create the logs directory
+RUN mkdir -p /app/logs
+
 # Build the TypeScript code
 RUN npm run build
 
