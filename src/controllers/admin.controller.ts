@@ -211,14 +211,16 @@ class AdminController {
 
       // Update answers
       for (const answerDto of questionDto.answers) {
-        let answer = await this.answerRepository.findOneBy({ id: answerDto.id });
-        if (answer) {
+        if (answerDto.id) {
           // Update existing answer
-          answer.text = answerDto.text;
-          answer.isCorrect = answerDto.isCorrect;
-          await this.answerRepository.save(answer);
+          let answer = await this.answerRepository.findOneBy({ id: answerDto.id });
+          if (answer) {
+            answer.text = answerDto.text;
+            answer.isCorrect = answerDto.isCorrect;
+            await this.answerRepository.save(answer);
+          }
         } else {
-          // Create new answer
+          // Create new answer with auto-generated ID
           const newAnswer = this.answerRepository.create({
             ...answerDto,
             question: question,
